@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "babel index.js -o dist/index.js",
+    "build": "npx babel index.js -o dist/index.js",
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
