@@ -55,13 +55,13 @@ const Allpost = () => {
                 <img
                   src={`${BaseUrl}/images/${item.image}`}
                   alt="Blog"
-                  className="w-full h-[260px] object-cover rounded-[6px]"
+                  className="w-full h-[200px] object-fit rounded-[6px]"
                 />
                 <div className="py-2">
                   <h3 className="text-[18px] font-semibold text-gray-900">
                     {item.title}
                   </h3>
-                  <p className="text-gray-700 text-[16px] mb-4">{item.desc}</p>
+                  <p className="text-gray-700 text-[16px] mb-4 text-ellips">{item.desc}</p>
                   <div className="flex justify-between">
                     <button
                       onClick={() => handleDelete(item._id)}

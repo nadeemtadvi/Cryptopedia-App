@@ -26,7 +26,7 @@ const RecentPost = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-[repeat(_auto-fit,minmax(8rem,1fr)_)] gap-5 mb-24">
+      <div className="grid grid-cols-[repeat(_auto-fit,minmax(18rem,1fr)_)] gap-5 mb-24">
         {post &&
           post.map((post, index) => {
             return (
@@ -34,10 +34,10 @@ const RecentPost = () => {
                 key={index}
                 className=" bg-white border border-gray-200 rounded-[6px] p-3 "
               >
-                <div className="bg-black rounded-[6px] ">
+                <div className=" rounded-[6px] ">
                   <a href="#">
                     <img
-                      className="rounded-[6px] h-[260px] object-cover "
+                      className="rounded-[6px] h-[200px] w-full object-fit "
                       src={`${BaseUrl}/images/${post.image}`}
                       alt=""
                     />
@@ -70,7 +70,7 @@ const RecentPost = () => {
                         />
                       </svg>
                   </div>
-                  <p className="mb-1 font-normal text-gray-700 dark:text-gray-400">
+                  <p className="mb-1 font-normal text-gray-700 dark:text-gray-400 text-ellips">
                     {post.desc}
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     Dignissimos commodi quia.
