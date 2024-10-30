@@ -5,7 +5,7 @@ import AuthRoutes from "./routes/Auth.js";
 import cookieParser from "cookie-parser";
 import BlogsRoutes from "./routes/Blog.js";
 import DashboardRoute from "./routes/Dashboard.js";
-import CommentRoute from "./routes/comment.js";
+import CommentRoute from "./routes/Comment.js";
 import PublicRoutes from "./routes/Public.js";
 import cors from "cors";
 
