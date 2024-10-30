@@ -47,7 +47,7 @@ const Profile = () => {
   }, [user]); // Added user as a dependency
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
+    <div className="flex items-center justify-center min-h-screen max-w-screen-2xl mx-auto">
       <div className="bg-gray-400 p-6 rounded-lg shadow-lg w-96">
         <h2 className="text-2xl font-semibold text-center text-white mb-4">
           Update Profile

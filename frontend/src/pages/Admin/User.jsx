@@ -45,11 +45,11 @@ const User = () => {
     <div>
       <div className="flex justify-center items-center mt-4">
         <div className="w-full max-w-4xl">
-          <h4 className="text-[2rem] mb-4">User</h4>
+          <h4 className="text-[1.5rem] mb-4"><span className="py-1 px-1 border-b-2 border-sky-600">User</span></h4>
 
-          <table className="w-full text-left table-auto">
+          <table className="w-full text-left">
             <thead>
-              <tr className="bg-gray-800 text-white">
+              <tr className=" text-black !font-medium border-b border-gray-300">
                 <th className="px-4 py-2">#</th>
                 <th className="px-4 py-2">Name</th>
                 <th className="px-4 py-2">Role</th>
@@ -62,7 +62,7 @@ const User = () => {
                 Users.map((user, index) => (
                   <tr
                     key={user.id}
-                    className="bg-gray-700 text-gray-200 border-b border-gray-600"
+                    className=" text-gray-700 border-b border-gray-300"
                   >
                     <td className="px-4 py-2">{index + 1}</td>
                     <td className="px-4 py-2">{user.FullName}</td>
@@ -70,7 +70,7 @@ const User = () => {
                     <td className="px-4 py-2">{user.email}</td>
                     <td className="px-4 py-2">
                       <button
-                        className="bg-red-600 hover:bg-red-700 text-white font-bold py-1 px-3 rounded flex items-center"
+                        className="bg-red-500 hover:bg-red-700 text-white  py-1 px-3 rounded-[6px] flex items-center"
                         onClick={() => handleDelete(user._id)}
                       >
                         <svg

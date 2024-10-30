@@ -8,13 +8,13 @@ const AdminLayout = () => {
   const user = useSelector((state) => state.auth.user);
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (!user) {
-  //     navigate("/");
-  //   } else if (user.role !== "admin") {
-  //     navigate("/");
-  //   }
-  // }, [user, navigate]);
+  useEffect(() => {
+    if (!user) {
+      navigate("/");
+    } else if (user.role !== "admin") {
+      navigate("/");
+    }
+  }, [user, navigate]);
 
   return (
     <>

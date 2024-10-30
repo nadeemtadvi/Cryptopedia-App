@@ -1,35 +1,54 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { BaseUrl, post } from "../services/Endpoint";
 import { removeUser } from "../redux/AuthSlice";
 import toast from "react-hot-toast";
+import { navbar } from "../Constant/constants";
 
 const Navbar = () => {
+  const {id} = useParams()
   const user = useSelector((state) => state.auth.user);
-  const navigate =useNavigate()
-  console.log("user", user);
+  const navigate = useNavigate();
+const [toggle, setToggle] = useState(false)
+
+const handleToggle = () => {
+  setToggle((prev) => !prev)
+}
 
   const handleLogout = async () => {
     try {
-      const res = await post('/auth/logout')
-      const data = res.data
-      console.log(data) 
+      const res = await post("/auth/logout");
+      const data = res.data;
+      console.log(data);
       if (res.status === 200) {
         navigate("/login");
         toast.success(data.message);
-        dispatch(removeUser())
+        dispatch(removeUser());
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
   return (
-    <div className="backdrop-opacity-50 bg-white/30   p-4">
+    <div className="max-w-screen-2xl mx-auto bg-white    p-4">
       <div className="flex justify-between items-center">
-        <Link to={"/"}>
-          <div className="text-white font-semibold text-[1.5rem]">LOGO</div>
-        </Link>
+        <div>
+          <Link to={"/"}>
+            <div className="text-black font-bold text-[1.5rem]">
+              {navbar.NAV_LOGO}
+            </div>
+          </Link>
+        </div>
+        <div>
+          <ul className="flex justify-between items-center gap-8 text-black">
+            {navbar.NAVITEMS.map((item, index) => (
+              <li key={index}>
+                <Link to={item.link}>{item.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
         <div>
           {!user ? (
             <Link to={"/login"}>
@@ -40,16 +59,16 @@ const Navbar = () => {
           ) : (
             <div className="Avatars relative">
               <img
+              onClick={handleToggle}
                 id="avatarButton"
                 type="button"
                 data-dropdown-toggle="userDropdown"
                 data-dropdown-placement="bottom-start"
                 className="w-12 h-12 rounded-full cursor-pointer object-cover"
-                // src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?t=st=1729629264~exp=1729632864~hmac=832945374e94c2b84b329d7beca883a12918328c647be5c84e4f2084cb562735&w=740"
                 src={`${BaseUrl}/images/${user.profile}`}
                 alt="User dropdown"
               />
-              {/* Dropdown menu */}
+              {toggle && 
               <div
                 id="userDropdown"
                 className="z-10  absolute translate-x-[-122px] translate-y-[26px] bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
@@ -78,7 +97,7 @@ const Navbar = () => {
 
                   <li>
                     <Link
-                      to={"/profile/85638947"}
+                      to={`/profile/${id}`}
                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
                       Profile
@@ -93,7 +112,7 @@ const Navbar = () => {
                     Sign out
                   </Link>
                 </div>
-              </div>
+              </div>}
             </div>
           )}
           {/* */}

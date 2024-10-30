@@ -11,19 +11,24 @@ import AdminLayout from "./Layouts/AdminLayout";
 import Addpost from "./pages/Admin/Addpost";
 import User from "./pages/Admin/User";
 import Allpost from "./pages/Admin/Allpost";
-import { Toaster } from 'react-hot-toast';
-
+import { Toaster } from "react-hot-toast";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-      <Toaster/>
+        <Toaster />
         <Routes>
           <Route path="/" element={<UserLayout />}>
             <Route index element={<Home />} />
             <Route path="post/:id" element={<Post />}></Route>
             <Route path="profile/:id" element={<Profile />}></Route>
+            <Route path="/about" element={<About />}></Route>
+            <Route path="/contact" element={<Contact />}></Route>
+            <Route path="/blog" element={<Blog />}></Route>
           </Route>
           <Route path="/dashboard" element={<AdminLayout />}>
             <Route index element={<Dashboard />} />

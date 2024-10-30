@@ -58,7 +58,7 @@ useEffect(() => {
 },[loaddata,id])
 
   return (
-    <div className="p-5">
+    <div className="max-w-screen-2xl mx-auto ">
       <div className="mt-[4rem]  text-black">
         <h3 className="text-[2rem] font-medium">{onPosts && onPosts?.title}</h3>
         <div className="max-w-screen-lg mx-auto mt-[1rem]">

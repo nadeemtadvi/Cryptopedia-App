@@ -51,22 +51,21 @@ const Allpost = () => {
         post.map((item) => {
           return (
             <div key={item.id} className="">
-              <div className="max-w-sm bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="max-w-sm bg-white rounded-[6px] border border-gray-300 p-3  overflow-hidden">
                 <img
-                  // src="https://img.freepik.com/free-photo/monstera-plant-green-pot_53876-145188.jpg?t=st=1729632583~exp=1729636183~hmac=8c19e3b3dd239db1617b974e750a5530dcfa025592b4f55971a62b54ca1ca5fc&w=740"
                   src={`${BaseUrl}/images/${item.image}`}
                   alt="Blog"
-                  className="w-full h-60"
+                  className="w-full h-[260px] object-cover rounded-[6px]"
                 />
-                <div className="p-4">
-                  <h3 className="text-lg font-bold text-gray-900">
+                <div className="py-2">
+                  <h3 className="text-[18px] font-semibold text-gray-900">
                     {item.title}
                   </h3>
-                  <p className="text-gray-700 mb-4">{item.desc}</p>
+                  <p className="text-gray-700 text-[16px] mb-4">{item.desc}</p>
                   <div className="flex justify-between">
                     <button
                       onClick={() => handleDelete(item._id)}
-                      className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded flex items-center"
+                      className="bg-red-500 hover:bg-red-700 text-white p-[3px_16px_4px] rounded-[6px] flex items-center"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +83,7 @@ const Allpost = () => {
                     </button>
                     <button
                       onClick={() => handleUpdate(item._id)}
-                      className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded flex items-center"
+                      className="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold p-[3px_16px_4px] rounded-[6px] flex items-center"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

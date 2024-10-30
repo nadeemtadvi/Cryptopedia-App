@@ -39,7 +39,7 @@ const dispatch=useDispatch()
 
   return (
     <div>
-      <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="flex items-center justify-center min-h-screen bg-gray-100 max-w-screen-2xl mx-auto">
         <div className="bg-white p-8 rounded-lg shadow-lg w-96">
           {/* Logo */}
           <div className="flex justify-center mb-6">

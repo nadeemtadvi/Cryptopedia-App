@@ -23,17 +23,17 @@ const [comments, setComment] = useState([])
   return (
     <div className='p-4'>
         <div className='grid grid-cols-3 gap-4'>
-        <div className='rounded-[4px] bg-sky-600 py-3  px-4'>
-            <h4 className='text-[1.6rem] text-white font-medium'>Total Users</h4>
-            <h4 className='text-[1.2rem] text-white'>{users && users.length}</h4>
+        <div className='rounded-[4px] border border-gray-300 hover:bg-sky-50 py-3  px-4'>
+            <h4 className='text-[1.6rem] text-blue-800'>Total Users</h4>
+            <h4 className='text-[1.2rem] text-blue-800'>{users && users.length}</h4>
         </div>
-        <div className='rounded-[4px] bg-teal-600 py-3  px-4'>
-            <h4 className='text-[1.6rem] text-white font-medium'>Total Posts</h4>
-            <h4 className='text-[1.2rem] text-white'>{posts && posts.length}</h4>
+        <div className='rounded-[4px] border border-gray-300 hover:bg-sky-50 py-3  px-4'>
+            <h4 className='text-[1.6rem] text-blue-800 '>Total Posts</h4>
+            <h4 className='text-[1.2rem] text-blue-800'>{posts && posts.length}</h4>
         </div>
-        <div className='rounded-[4px] bg-yellow-500 py-3  px-4'>
-            <h4 className='text-[1.6rem] text-white font-medium'>Total Comments</h4>
-            <h4 className='text-[1.2rem] text-white'>{comments && comments.length}</h4>
+        <div className='rounded-[4px] border border-gray-300 hover:bg-sky-50 py-3  px-4'>
+            <h4 className='text-[1.6rem] text-blue-800 '>Total Comments</h4>
+            <h4 className='text-[1.2rem] text-blue-800'>{comments && comments.length}</h4>
         </div>
         </div>
     </div>
